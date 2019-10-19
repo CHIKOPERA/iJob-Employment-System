@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1A35852-B1EA-4970-B3FD-D6AA3B64B0A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>iJob2019</RootNamespace>
+    <AssemblyName>iJob2019</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\T4NY4\Desktop\iJob System\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>80F17A64CDB19D878B644989D3CEE8FB77446EFB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>iJob2019_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>jobs_logo_W11_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Chart.Base, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Chart.Windows, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Core.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Pdf.Base, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.PdfViewer.Windows, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfSmithChart.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Shared.Base, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinRT.Controls.PdfViewer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WinRtPdfViewer.1.0.4\lib\WinRT.Controls.PdfViewer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Camera.cs" />
+    <Compile Include="CompletedJobsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompletedJobsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMethods.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="DataSerD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSerD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetAgents.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetAgents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetCategory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetCategory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetDelete.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetDelete.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetDrivers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetDrivers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetJobRequests.cs">
+      <DependentUpon>datasetJobRequests.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetJobRequests.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetJobRequests.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetLabourers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetLabourers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetLabourerss.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetLabourerss.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasetLabrs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetLabrs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDrivers2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDrivers2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsJobRequest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsJobRequest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsJobRequestt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsJobRequestt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLabourer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLabourer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLabourerr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLabourerr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsLabourers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLabourers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsManageLabourer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsManageLabourer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrator.Designer.cs">
+      <DependentUpon>frmAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAssignJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignJob.Designer.cs">
+      <DependentUpon>frmAssignJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCameraCapcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCameraCapcs.Designer.cs">
+      <DependentUpon>frmCameraCapcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditEmployee.Designer.cs">
+      <DependentUpon>frmEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditLab.Designer.cs">
+      <DependentUpon>frmEditLab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJobs.Designer.cs">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageClients.Designer.cs">
+      <DependentUpon>frmManageClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageEmployees.Designer.cs">
+      <DependentUpon>frmManageEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageLabourers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageLabourers.Designer.cs">
+      <DependentUpon>frmManageLabourers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNetwork.Designer.cs">
+      <DependentUpon>frmNetwork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOnlineHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOnlineHelp.Designer.cs">
+      <DependentUpon>frmOnlineHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPanelEdits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPanelEdits.Designer.cs">
+      <DependentUpon>frmPanelEdits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegEmp.Designer.cs">
+      <DependentUpon>frmRegEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegLab.Designer.cs">
+      <DependentUpon>frmRegLab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportsLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportsLoading.Designer.cs">
+      <DependentUpon>frmReportsLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="HghlyRqstdCtgryRprt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HghlyRqstdCtgryRprt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="iJobDataSetD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iJobDataSetD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs" />
+    <Compile Include="jobRequest.cs" />
+    <Compile Include="jobsDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jobsDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Job_Request.cs">
+      <DependentUpon>modelJobRequets.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginSession.cs" />
+    <Compile Include="modelJobRequets.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelJobRequets.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelJobRequets.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelJobRequets.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelJobRequets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelJobRequets.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PictureConvetion.cs" />
+    <Compile Include="Placement.cs" />
+    <Compile Include="PlacementByLabourer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlacementByLabourer.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProfitableClientsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfitableClientsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportJobRequests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportJobRequests.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportsRequest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportsRequest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrator.resx">
+      <DependentUpon>frmAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAssignJob.resx">
+      <DependentUpon>frmAssignJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCameraCapcs.resx">
+      <DependentUpon>frmCameraCapcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditEmployee.resx">
+      <DependentUpon>frmEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditLab.resx">
+      <DependentUpon>frmEditLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJobs.resx">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageClients.resx">
+      <DependentUpon>frmManageClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageEmployees.resx">
+      <DependentUpon>frmManageEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageLabourers.resx">
+      <DependentUpon>frmManageLabourers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNetwork.resx">
+      <DependentUpon>frmNetwork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOnlineHelp.resx">
+      <DependentUpon>frmOnlineHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPanelEdits.resx">
+      <DependentUpon>frmPanelEdits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegEmp.resx">
+      <DependentUpon>frmRegEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegLab.resx">
+      <DependentUpon>frmRegLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportsLoading.resx">
+      <DependentUpon>frmReportsLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HghlyRqstdCtgryRprt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HghlyRqstdCtgryRprt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlacementByLabourer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlacementByLabourer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitableClientsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProfitableClientsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportJobRequests.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportJobRequests.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsRequest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportsRequest.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTest.rdlc" />
+    <None Include="CompletedJobsDataSet.xsc">
+      <DependentUpon>CompletedJobsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CompletedJobsDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CompletedJobsDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CompletedJobsDataSet.xss">
+      <DependentUpon>CompletedJobsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSerD.xsc">
+      <DependentUpon>DataSerD.xsd</DependentUpon>
+    </None>
+    <None Include="DataSerD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSerD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSerD.xss">
+      <DependentUpon>DataSerD.xsd</DependentUpon>
+    </None>
+    <None Include="datasetAgents.xsc">
+      <DependentUpon>datasetAgents.xsd</DependentUpon>
+    </None>
+    <None Include="datasetAgents.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetAgents.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetAgents.xss">
+      <DependentUpon>datasetAgents.xsd</DependentUpon>
+    </None>
+    <None Include="datasetCategory.xsc">
+      <DependentUpon>datasetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="datasetCategory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetCategory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetCategory.xss">
+      <DependentUpon>datasetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="datasetDelete.xsc">
+      <DependentUpon>datasetDelete.xsd</DependentUpon>
+    </None>
+    <None Include="datasetDelete.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetDelete.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetDelete.xss">
+      <DependentUpon>datasetDelete.xsd</DependentUpon>
+    </None>
+    <None Include="datasetDrivers.xsc">
+      <DependentUpon>datasetDrivers.xsd</DependentUpon>
+    </None>
+    <None Include="datasetDrivers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetDrivers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetDrivers.xss">
+      <DependentUpon>datasetDrivers.xsd</DependentUpon>
+    </None>
+    <None Include="datasetJobRequests.xsc">
+      <DependentUpon>datasetJobRequests.xsd</DependentUpon>
+    </None>
+    <None Include="datasetJobRequests.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetJobRequests.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetJobRequests.xss">
+      <DependentUpon>datasetJobRequests.xsd</DependentUpon>
+    </None>
+    <None Include="datasetLabourers.xsc">
+      <DependentUpon>datasetLabourers.xsd</DependentUpon>
+    </None>
+    <None Include="datasetLabourers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetLabourers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetLabourers.xss">
+      <DependentUpon>datasetLabourers.xsd</DependentUpon>
+    </None>
+    <None Include="datasetLabourerss.xsc">
+      <DependentUpon>datasetLabourerss.xsd</DependentUpon>
+    </None>
+    <None Include="datasetLabourerss.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetLabourerss.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetLabourerss.xss">
+      <DependentUpon>datasetLabourerss.xsd</DependentUpon>
+    </None>
+    <None Include="datasetLabrs.xsc">
+      <DependentUpon>datasetLabrs.xsd</DependentUpon>
+    </None>
+    <None Include="datasetLabrs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetLabrs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetLabrs.xss">
+      <DependentUpon>datasetLabrs.xsd</DependentUpon>
+    </None>
+    <None Include="dsDrivers2.xsc">
+      <DependentUpon>dsDrivers2.xsd</DependentUpon>
+    </None>
+    <None Include="dsDrivers2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDrivers2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDrivers2.xss">
+      <DependentUpon>dsDrivers2.xsd</DependentUpon>
+    </None>
+    <None Include="dsJobRequest.xsc">
+      <DependentUpon>dsJobRequest.xsd</DependentUpon>
+    </None>
+    <None Include="dsJobRequest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsJobRequest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsJobRequest.xss">
+      <DependentUpon>dsJobRequest.xsd</DependentUpon>
+    </None>
+    <None Include="dsJobRequestt.xsc">
+      <DependentUpon>dsJobRequestt.xsd</DependentUpon>
+    </None>
+    <None Include="dsJobRequestt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsJobRequestt.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsJobRequestt.xss">
+      <DependentUpon>dsJobRequestt.xsd</DependentUpon>
+    </None>
+    <None Include="dsLabourer.xsc">
+      <DependentUpon>dsLabourer.xsd</DependentUpon>
+    </None>
+    <None Include="dsLabourer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLabourer.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLabourer.xss">
+      <DependentUpon>dsLabourer.xsd</DependentUpon>
+    </None>
+    <None Include="dsLabourerr.xsc">
+      <DependentUpon>dsLabourerr.xsd</DependentUpon>
+    </None>
+    <None Include="dsLabourerr.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLabourerr.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLabourerr.xss">
+      <DependentUpon>dsLabourerr.xsd</DependentUpon>
+    </None>
+    <None Include="dsLabourers.xsc">
+      <DependentUpon>dsLabourers.xsd</DependentUpon>
+    </None>
+    <None Include="dsLabourers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsLabourers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsLabourers.xss">
+      <DependentUpon>dsLabourers.xsd</DependentUpon>
+    </None>
+    <None Include="dsManageLabourer.xsc">
+      <DependentUpon>dsManageLabourer.xsd</DependentUpon>
+    </None>
+    <None Include="dsManageLabourer.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsManageLabourer.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsManageLabourer.xss">
+      <DependentUpon>dsManageLabourer.xsd</DependentUpon>
+    </None>
+    <None Include="Files\Online help.pdf" />
+    <None Include="iJob2019_TemporaryKey.pfx" />
+    <None Include="iJobDataSetD.xsc">
+      <DependentUpon>iJobDataSetD.xsd</DependentUpon>
+    </None>
+    <None Include="iJobDataSetD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>iJobDataSetD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="iJobDataSetD.xss">
+      <DependentUpon>iJobDataSetD.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="modelJobRequets.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>modelJobRequets.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="jobsDataset.xsc">
+      <DependentUpon>jobsDataset.xsd</DependentUpon>
+    </None>
+    <None Include="jobsDataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>jobsDataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="jobsDataset.xss">
+      <DependentUpon>jobsDataset.xsd</DependentUpon>
+    </None>
+    <None Include="modelJobRequets.edmx.diagram">
+      <DependentUpon>modelJobRequets.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\iJob2019.datasetDeleteTableAdapters.Job_RequestTableAdapter.datasource" />
+    <None Include="Properties\DataSources\iJob2019.datasetDeleteTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\iJob2019.datasetDeleteTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\iJobEntitiesModel.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images and Icons\icons8_toggle_on_filled_50px.png" />
+    <Content Include="Images and Icons\icons8_toggle_on_filled_50px_1.png" />
+    <Content Include="jobs_logo_W11_icon.ico" />
+    <Content Include="modelJobRequets.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modelJobRequets.edmx</DependentUpon>
+      <LastGenOutput>modelJobRequets.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="modelJobRequets.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modelJobRequets.edmx</DependentUpon>
+      <LastGenOutput>modelJobRequets.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
